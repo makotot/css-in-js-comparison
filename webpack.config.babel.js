@@ -16,7 +16,12 @@ export default {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader'
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015'],
+          plugins: ['transform-object-assign']
+        }
       }
     ]
   },
