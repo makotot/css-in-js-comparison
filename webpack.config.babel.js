@@ -25,7 +25,9 @@ export default {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'css in js comparison'
+      title: 'css in js comparison',
+      filename: 'index.html',
+      template: 'src/index.html'
     })
   ]
 }

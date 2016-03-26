@@ -18,11 +18,11 @@ gulp.task('webpack-dev-server', () => {
       colors: true
     }
   })
-    .listen(8080, 'localhost', (err) => {
-      if (err) {
-        throw new gutil.PluginError('webpack-dev-server', err)
-      }
+  .listen(8080, 'localhost', (err) => {
+    if (err) {
+      throw new gutil.PluginError('webpack-dev-server', err)
+    }
 
-      gutil.log('[webpack-dev-server]', 'localhost:8080')
-    })
+    gutil.log('[webpack-dev-server]', 'localhost:8080')
+  })
 })
