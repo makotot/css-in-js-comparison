@@ -31,6 +31,7 @@
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.2.0",
     "html-webpack-plugin": "^2.14.0",
+    "postcss-normalize": "^0.1.2",
     "run-sequence": "^1.1.5",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"

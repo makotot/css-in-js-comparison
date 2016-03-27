@@ -2,14 +2,17 @@ import gulp from 'gulp'
 import del from 'del'
 import gutil from 'gulp-util'
 import sass from 'gulp-sass'
+import postcss from 'gulp-postcss'
 import run from 'run-sequence'
 import webpack from 'webpack'
 import WebpackDevServer from 'webpack-dev-server'
 import webpackConfig from './webpack.config.babel'
+import normalize from 'postcss-normalize'
+import cssnano from 'cssnano'
 
 gulp.task('default', ['webpack-dev-server'])
 gulp.task('serve', () => {
-  run('clean', ['sass', 'webpack-dev-server'], 'watch')
+  run('clean', ['css', 'webpack-dev-server'], 'watch')
 })
 
 gulp.task('clean', (cb) => {
@@ -18,15 +21,19 @@ gulp.task('clean', (cb) => {
   ], cb)
 })
 
-gulp.task('sass', () => {
+gulp.task('css', () => {
   return gulp
     .src('./src/scss/*.scss')
     .pipe(sass())
+    .pipe(postcss([
+      normalize,
+      cssnano,
+    ]))
     .pipe(gulp.dest('./dist/css'))
 })
 
 gulp.task('watch', () => {
-  gulp.watch('./src/scss/*.scss', ['sass'])
+  gulp.watch('./src/scss/*.scss', ['css'])
 })
 
 gulp.task('webpack-dev-server', () => {
