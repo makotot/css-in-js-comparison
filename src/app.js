@@ -13,7 +13,17 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Checkbox name="check" id="checkbox" text="checkbox" />
+        <ul>
+          <li>
+            <Checkbox name="checkbox-a" id="checkbox-a" text="checkbox A" />
+          </li>
+          <li>
+            <Checkbox name="checkbox-b" id="checkbox-b" text="checkbox B" />
+          </li>
+          <li>
+            <Checkbox name="checkbox-c" id="checkbox-c" text="checkbox C" />
+          </li>
+        </ul>
       </div>
     )
   }
