@@ -33,7 +33,7 @@ gulp.task('css', () => {
 })
 
 gulp.task('watch', () => {
-  gulp.watch('./src/scss/*.scss', ['css'])
+  gulp.watch('./src/scss/**/*.scss', ['css'])
 })
 
 gulp.task('webpack-dev-server', () => {

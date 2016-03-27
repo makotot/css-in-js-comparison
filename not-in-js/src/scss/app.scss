@@ -1,5 +1,4 @@
 @charset "utf-8";
 
-.checkbox {
-  display: flex;
-}
+@import "base/base";
+@import "components/checkbox";
